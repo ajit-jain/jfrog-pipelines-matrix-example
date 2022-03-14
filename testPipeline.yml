@@ -8,16 +8,23 @@ pipelines:
        configuration:
          multiNode: true
        stepletMultipliers:
-         environmentVariables:
-           - foo: "foo"
-           - foo: "bar"
-         runtimes:
-           - type: image
-             image:
-               auto:
-                 language: node
-                 versions:
-                   - 12.14.0
+          environmentVariables:
+            - foo: "foo"
+            - foo: "bar"
+            - foo: "baz"
+          runtimes:
+            - type: image
+              image:
+                auto:
+                  language: node
+                  versions:
+                    - 8.16.0 
+            - type: image
+              image:
+                auto:
+                  language: node
+                  versions:
+                    - 12.14.0
        execution:
          onExecute:
            - echo $foo
